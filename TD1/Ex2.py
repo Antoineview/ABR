@@ -45,17 +45,7 @@ def heap_pop(H):
     return to_pop
 
 H = [None, (1, 'A'),(2, 'B'),(5, 'E'),(3, 'C'),(4, 'D'),(6, 'F'),(7, 'G')]
-print(heap_pop(H))
-print(H)
-print(heap_pop(H))
-print(H)
-print(heap_pop(H))
-print(H)
-print(heap_pop(H))
-print(H)
-print(heap_pop(H))
-print(H)
-print(heap_pop(H))
-print(H)
-print(heap_pop(H))
-print(H)
+
+for i in range(7):
+    print(heap_pop(H))
+    print(H)
