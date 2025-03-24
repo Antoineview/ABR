@@ -44,8 +44,40 @@ def heap_pop(H):
 
     return to_pop
 
-H = [None, (1, 'A'),(2, 'B'),(5, 'E'),(3, 'C'),(4, 'D'),(6, 'F'),(7, 'G')]
+# %% Mise à jour
+def heap_update(H, pos, newval):
+    if pos <= 0 or pos >= len(H):
+        raise Exception
 
-for i in range(7):
-    print(heap_pop(H))
-    print(H)
+    oldval = H[pos][0]
+    elt = H[pos][1]
+
+    if newval < oldval:
+        i = pos
+        i2 = i // 2
+        while i2 > 0 and newval < H[i2][0]:
+            H[i] = H[i2]
+            i = i2
+            i2 //= 2
+        H[i] = (newval, elt)
+    elif newval > oldval:
+        i = pos
+        size = len(H)
+        while 2*i < size:
+            left_child = 2*i
+            right_child = 2*i + 1
+            if right_child < size and H[right_child][0] < H[left_child][0]:
+                smallest = right_child
+            else:
+                smallest = left_child
+            if newval <= H[smallest][0]:
+                break
+            H[i] = H[smallest]
+            i = smallest
+        H[i] = (newval, elt)
+    # Si newval == oldval, on ne fait rien
+
+H = [ None , (1 , 'D') , (8 , 'C') , (9 , 'C') , (2 , 'B') ]
+
+heap_update(H,3,0)
+print(H)
