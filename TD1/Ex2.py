@@ -44,7 +44,13 @@ def heap_pop(H):
 
     return to_pop
 
-H = [None, (1, 'C'), (2, 'B'), (8, 'A'), (9, 'D')]
+H = [None, (1, 'A'),(2, 'B'),(5, 'E'),(3, 'C'),(4, 'D'),(6, 'F'),(7, 'G')]
+print(heap_pop(H))
+print(H)
+print(heap_pop(H))
+print(H)
+print(heap_pop(H))
+print(H)
 print(heap_pop(H))
 print(H)
 print(heap_pop(H))
