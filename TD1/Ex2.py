@@ -37,7 +37,7 @@ def heap_pop(H):
             else:
                 smallest = left_child
             if last[0] <= H[smallest][0]:
-                break
+                size = 0
             H[i] = H[smallest]
             i = smallest
         H[i] = last
