@@ -82,14 +82,17 @@ H = [ None , (1 , 'D') , (8 , 'C') , (9 , 'C') , (2 , 'B') ]
 heap_update(H,3,0)
 print(H)
 
-
+# %% Tri
 def heap_sort(L):
     tas = [None]
     res = []
     for i in L :
         heap_push(tas,L[i][0],L[i][1])
-    Long = len(tas)
-    while Long > 1 :
+    while tas != [None]:
         res.append(heap_pop(tas))
         Long -= 1
     return res
+
+# %% heapify
+
+
