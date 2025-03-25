@@ -87,4 +87,9 @@ def heap_sort(L):
     tas = [None]
     res = []
     for i in L :
-        heap_push(tas,L[i][0],L[i]
+        heap_push(tas,L[i][0],L[i][1])
+    Long = len(tas)
+    while Long > 1 :
+        res.append(heap_pop(tas))
+        Long -= 1
+    return res
